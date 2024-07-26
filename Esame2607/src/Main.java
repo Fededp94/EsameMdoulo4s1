@@ -5,7 +5,7 @@ public class Main {
         interface Playable {
             void play();
         }
-
+        // Classe astratta elemento multimediale
         abstract class MediaElement {
             protected String title;
 
@@ -18,6 +18,7 @@ public class Main {
             }
         }
 
+        //Classe concreta immagine
         class Image extends MediaElement {
             private int brightness;
 
@@ -39,6 +40,7 @@ public class Main {
             }
         }
 
+        // Classe astratta elementi riproducibili
         abstract class PlayableMediaElement extends MediaElement implements Playable {
             protected int duration;
 
@@ -48,7 +50,7 @@ public class Main {
             }
         }
 
-
+        // Classe concreta registrazione audio
         class AudioRecording extends PlayableMediaElement {
             private int volume;
 
@@ -57,7 +59,7 @@ public class Main {
                 this.volume = volume;
             }
 
-            public void increaseVolume() {
+            public void IncreaseVolume() {
                 volume++;
             }
 
@@ -74,6 +76,7 @@ public class Main {
         }
 
 
+        Classe concreta video
         class Video extends PlayableMediaElement {
             private int volume;
             private int brightness;
@@ -108,13 +111,13 @@ public class Main {
             }
         }
 
-
+        // Classe lettore multimediale
         public class MediaPlayer {
             public static void main(String[] args) {
                 Scanner scanner = new Scanner(System.in);
                 MediaElement[] elements = new MediaElement[5];
 
-                // Creazione degli elementi multimediali
+                // Creazione elementi multimediali
                 elements[0] = new Image("Beautiful Sunset", 5);
                 elements[1] = new AudioRecording("Classic Symphony", 3, 4);
                 elements[2] = new Video("Funny Cat Video", 2, 3, 6);
